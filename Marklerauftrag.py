@@ -1,26 +1,40 @@
-weitererRaum = True;
-gesamtflaeche = 0;
-anzahlRaeume = 0;
+weiterer_raum = True
+gesamtflaeche = 0
+anzahl_raeume = 0
 
-while(weitererRaum):
-    anzahlRaeume += 1
-    
-    laenge = int(input("Bitte geben sie die Länge des Raumes an(in Meter): "))  #Eingabe der Raumlänge
-    breite = int(input("Bitte geben sie die Breite des Raumes an(in Meter): ")) #Eingabe der Raumbreite
+while weiterer_raum:
+    weiterer_raum += 1
 
-    bezeichnung = input("Bitte geben sie die Bezeichnung des Raumes an: ") #Eingabe der Raumbezeichnung
+    # Eingabe der Raumbezeichnung
+    bezeichnung = input("Bitte geben sie die Bezeichnung des Raumes an: ")
 
-    flaeche = laenge * breite #Flächen-Berechnung
-    gesamtflaeche += flaeche  #Addieren der "neuen" Fläche auf die Gesamtfläche
-    durchschnitt = gesamtflaeche / anzahlRaeume #Berechnung des Durchschnitts
-    
-    print("Die Fläche des Raumes " + "(" + bezeichnung + ")" + " (oder des Teilaumes) beträgt " + str(flaeche) + " Quadratmeter")#Ausgabe der Fläche des Raumes bzw. des Teilraumes
-    print("Die Gesamtfläche der/des Wohnung/Hauses beträgt " + str(gesamtflaeche) + " Quadratmeter")#Ausgabe der Gesamtfläche
-    print("Der Durchschnitt der/des Wohnung/Hauses beträgt " + str(durchschnitt) + " Quadratmeter") #Ausgabe des Quadratmeter Durchschnitts
-    
-    weitererRaumInput = input("möchten sie einen weiteren Raum hinzu addieren?(ja/nein): ").lower() #Abfrage ob weiterer Raum
+    # Eingabe der Raumlänge
+    laenge = int(input("Bitte geben sie die Länge des Raumes an(in Meter): "))
+    # Eingabe der Raumbreite
+    breite = int(input("Bitte geben sie die Breite des Raumes an(in Meter): "))
 
-    weitererRaum = weitererRaumInput == "ja" 
+    # Flächenberechnung
+    flaeche = laenge * breite
+    # Addieren der "neuen" Fläche auf die Gesamtfläche
+    gesamtflaeche += flaeche
+    # Berechnung des Durchschnitts
+    durchschnitt = gesamtflaeche / weiterer_raum
+
+    # Ausgabe der Fläche des Raumes bzw. des Teilraumes
+    print("Die Fläche des Raumes " + "(" + bezeichnung + ")" +
+          " (oder des Teilaumes) beträgt " + str(flaeche) + " Quadratmeter")
+    # Ausgabe der Gesamtfläche
+    print("Die Gesamtfläche der/des Wohnung/Hauses beträgt " +
+          str(gesamtflaeche) + " Quadratmeter")
+    # Ausgabe des Quadratmeter Durchschnitts
+    print("Der Durchschnitt der/des Wohnung/Hauses beträgt " +
+          str(durchschnitt) + " Quadratmeter")
+
+    # Abfrage ob weiterer Raum
+    weiterer_raum_input = (input("möchten sie einen weiteren Raum hinzu addieren?(ja/nein): ")
+                           .lower())
+
+    weiterer_raum = weiterer_raum_input == "ja"
 
 print("Schönen Tag!")
 
